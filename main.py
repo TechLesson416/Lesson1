@@ -1,16 +1,6 @@
-# цикл
-#for <...> in...:
-# команды
+# Вложенные цифры
 
-#word =  'поток'
-
-#for ch in word:
-#  print(ch)
-#                  0   3   1
-#итератор range(start, stop, step)
-
-for i in range(1, 101): 
-    if i % 10==5:
-        if i == 15:
-            continue
-        print(i)
+for i in range (1, 10):
+    for j in range (1, 10):
+        print (f'{i} * {j} = {i * j}', end = '\t')
+    print()
