@@ -1,12 +1,9 @@
-# Iterable object
-# len() - сколько элементов в объекте
-a = 123456
-length = len(str (a))
+height = int(input ('Введите рост: '))
 
-print (length)
 
-word = input ('Введите слово для анализа длины:')
-if not word or len(word) < 4:
-        print('Вы ничего не ввели')
-else:
-    print ('Длина слова "' + word + ' " =', len(word))
+while not (150 >= height >= 180):
+    print(f'Рост кандидата {height} не подходит')
+    height = int (input('Введите рост: '))
+
+    print ('Кандидат выбран')
+
