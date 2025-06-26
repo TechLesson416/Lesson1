@@ -1,9 +1,5 @@
-height = int(input ('Введите рост: '))
+counter = 1
+word ='поток'
 
-
-while not (150 >= height >= 180):
-    print(f'Рост кандидата {height} не подходит')
-    height = int (input('Введите рост: '))
-
-    print ('Кандидат выбран')
-
+if 'ток' in word:
+    print('Есть')
