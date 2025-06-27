@@ -15,16 +15,29 @@
 #print(chr(176)) #ASCII и Unicode
 
 
-s = set()
-word = input ('Введите фразу для зашифровки: ')
+#s = set()
+#word = input ('Введите фразу для зашифровки: ')
 
-for ch in word:
-    s.add(ord(ch))
+#for ch in word:
+   # s.add(ord(ch))
 
-print(s)
+#print(s)
 
-res = ''
-for i in s:
-    res += chr(i)
+#res = ''
+#for i in s:
+   # res += chr(i)
 
-print(res)
+#print(res)
+
+
+
+#abc = 'абвгдеёжзийклмнопрстуфхцшщъыьэюя'
+
+phrase = 'Язык Phyton'
+print(phrase.lower())
+print(phrase.upper())
+print(phrase.capitalize())
+print(phrase.title())
+print('Ура!' * 3)
+print ('Телевизор'.count('е'))
+print ('Python'.count('h'))
