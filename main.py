@@ -1,3 +1,3 @@
 #  John
-print ('hello git!')
-print ('Hello PyCharm')
+print ('HELLO GIT!')
+print ('HELLO PYCHARM')
