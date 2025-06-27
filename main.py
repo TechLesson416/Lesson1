@@ -18,6 +18,7 @@ for ch in s:
 print(f'Число гласных в слове "{s}" = {v}')
 for index in range (len(s)):
     print(s[index])
+    print (ch)
 
 
 
