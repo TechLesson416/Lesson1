@@ -1,4 +1,4 @@
-word = 'статор'
+temp = int(input('Введите число: ').strip())
+word = 'ротор'
 
-for ch in range(1, len(word) + 1):
-    print(word[i - i] * i, end ='')
+print(word.strip('р'))
