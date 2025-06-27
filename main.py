@@ -1,20 +1,25 @@
-# Удаление всех карт, кроме туза
-cards = {3,7, 'T', 'D', 'V', 'K'}
-ace = {'T'}
+# Строки (immutable, iterable)
+    #012345
+#s = 'Python'
+# s[3] = 'y' error (immutable)
+# Индекс может быть отрицательным (с конца)
+#print ('Длина слова: {len(s)}')
+#print(s[-1])
 
-result = cards - ace
-print (result)
 
-t_is = False
-# 2 Вариант
-while card:
-    card = cards.pop()
-    if cards == 'T':
-        cards.add(card)
-        t_is = True
-    else:
-        print(cards)
+s ='язык питон'
+ch = {'я', 'з', 'ы', 'к', 'п', 'и', 'т', 'о', 'н'}
+v = 0 #число гласных
 
-    if t_is and len(cards) == 1:
-        break
+for ch in s:
+    if ch in {'а','е','ё' 'и', 'о', 'у', 'э', 'ю', 'я', 'ы','y', 'o'}:
+        if ch in 'аеёиоуыэюяyo':
+            v += 1
+print(f'Число гласных в слове "{s}" = {v}')
+for index in range (len(s)):
+    print(s[index])
+
+
+
+
 
