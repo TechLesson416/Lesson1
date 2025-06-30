@@ -1,31 +1,20 @@
 # Списки (list)
+# Имитация стека
 
-#a = ['a','b','c']
-#b = a[:] #a.copy()
-#b.append ('d') # b += ['d']
-#print(id(a))
-#print(id(b))
-#print (a)
-#print (b)
-#lst = [] # пустой список
-#while (item := input('Индегриент: ')) != '': #выбор ингредиентов
-    #lst.append(item)
 
-#temp = set(lst) #исключение повторов
-#lst = list(temp)
+N = 5
 
-#print(f'У нас есть {len(lst)} ингредиентов: ')
-#lst.sort()
+lst = [] #Пустой список
 
-#for i in range (len(lst)):
-    #print(f'\t{i + 1}. {lst[i]}') #упорядовачение вывода списка
+for i in range(N):
+    print(f'Кладём книгу {i + 1} в стопку.')
+    lst.append(i + 1)
 
-#a = ['a', 'b', 'c']
-#b = a[:]
-#b.append ()
+print ('---')
 
-# имитация стека
-
+while lst:
+    item = lst.pop(0) # стек стоит по умолчанию
+    print (f'Берём книгу {item} из стопки.')
 
 
 
