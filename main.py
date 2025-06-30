@@ -1,20 +1,36 @@
 # Кортеж  (tuple, immutable)
-#channels = ('red', 'green', 'blue')
+# Студент и средний балл
 
-#r, *g, b = channels #распаковка
+#N = 3
+#student = []
+
+#for _ in range(N):
+    #student, average = input('ФИО: '), float(input('Ср. балл: '))
+    #student.append((student, average))
+
+#print(student)
+
+#for st in students:
+   # student, average = st
+   # print('Студент: ', student)
+   # print('Средний балл: ', average)
 
 
-#print(channels)
+# Функция sorted() - возвращает сортированный список
 
-channels = [128, 200, 155]
-
-r, g, b = channels
-
-print(r, g, b)
+s = {'Крутов','Селезнёв', 'Митрофанова'}
+r = True
 
 
+lst = sorted(s, reverse=r)
+
+print(*lst, sep=',')
 
 
+#lst = List(s)
+#lst.sort()
+
+#print(*lst, sep=',')
 
 
 
