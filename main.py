@@ -1,23 +1,10 @@
 #Строки (immutable, iterable)
-#Начало и окончание строки
-#startswitch и endswith
-# 1. find('подстрока', start)
-# 2. find('подстрока', start) - с какого места искать
+#Срез (у строки и у других коллекций, кроме set)
+#[начало:окончание:шаг]
 
-s = 'сихрофазотрон' #ищем 'о': сколько их и где находятся
-ch = 'о'
-
-numbers = set()
-
-if ch in s:
-    count = s.count(ch)
-    print(f'Буква {ch} встечается в слове {s} {count} раз.')
-    print('Её позиция/позиции:', end=' ')
-    start = 0
-    for i in range(count):
-        pos = s.find(ch, start)
-        numbers.add(pos)
-        start += pos
-        print(pos, end=' ')
-else:
-    print(f'Буквы \'{ch}\' нет в слове "{s}".')
+s = 'добрый день'
+t = {1,2,3}
+print(s[:6]) # от начала и до заданного индекса
+print(s[7:]) # от текущего индекса до конца
+print(s[3:8]) # от n до m (не включая)
+print(s[::-1])
