@@ -1,21 +1,16 @@
-# Кортеж (tupel, immutable)
-BLACK = (0, 0, 0)
-empty = () #tuple()
-one = (1,)
-temper = 36, 6
-s = 'Python'
-t = tuple(s) + ('.',)
-print(t)
+# Кортеж  (tuple, immutable)
+#channels = ('red', 'green', 'blue')
 
-cards = [(7,'червей'), ('туз', 'пик')]
+#r, *g, b = channels #распаковка
 
-print((1,2) < (1,2))
 
-a = 3
-b = 4
+#print(channels)
 
-a, b = b, a
+channels = [128, 200, 155]
 
+r, g, b = channels
+
+print(r, g, b)
 
 
 
