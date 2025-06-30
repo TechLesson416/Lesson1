@@ -1,12 +1,7 @@
-# Кортеж  (tuple, immutable)
-# Студент и средний балл
-# Функция enumerate() - в цикле for возвращает пару (i, v)
 
-fio = ['Крутов', 'Митрофанова', 'Селезнёв']
-
-for i, v in enumerate(fio):
-    print(f'{i + 1}. {v}.')
-
-
+text = '  P  y   t h o n '
+temp = text.split()
+res = ''.join(text.split()) # убрать все пробелы
+print(res)
 
 
