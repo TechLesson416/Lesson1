@@ -9,6 +9,11 @@
 #    [7,8,9],
 #]
 
+matrix = [[i + j for j in range(N)] for i in range(1,10,3)]
+print(matrix)
+
+
+
 #matrix = [[1]* N for _ in range(3)]
 #print(matrix)
 
