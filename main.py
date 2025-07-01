@@ -1,52 +1,23 @@
 # Словари
+# Частотный анализ
 
-#Пустой словарь
-# 1. d = {}
-# 2. d = dict()
-# Предзаполненный словарь
-d = {
-    'table':['таблица', 'стол'],
-    'well': ['хорошо','колодец','скважина'],
-    'chair': 'стул',
-    'apple': 'яблоко',
-    1: 'один',
-    (55.75, 37.5): 'Москва'
-}
+text ="""В Сихотэ-Алинском заповеднике обнаружен новый для науки гриб —
+это второй в мире вид из редкого рода Плевромицес, обитающего 
+на опавших веточках реликтового рододендрона.
+"""
 
-print(d[(55.75, 37.5)])
+commas = (',','!','.','?','-',':')
+for x in commas:
+    text=text.replace(x,'')
 
+lst = text.strip().lower().split().sort()
+print(lst)
 
-print(d['well'][0])
-if type (d['well']) == list:
-    d['well'].append('скважина')
-d['plum'] = 'слива'
-print(d['plum'])
-del d['well']
+for item in lst:
+    if them in res.keys():
+        res[item] += 1
+    else:
+        res[item] = 1
 
-deleted_item = d.pop('apple')
-
-print('Удалился элемент:', deleted_item)
-
-print('Есть ли стул в словаре')
-if 'стул' in d.values():
-    print('Да, есть')
-
-print('Доступ к несуществующему ключу без "Без исключений"')
-pear = d.get('pear', 'Груши нет')
-print('Где груша: ', pear)
-
-
-
-
-
-# Перебор пар "ключ-значение"
-for k, v in d.items(): #d.keys()
-    print(k, '->', v)
-
-print(d.keys()) # список ключей (list)
-print(d.values()) # список значений (list)
-print(d.items()) # список пар (ключ значения
-
-
-#print(d) - словарь целиком "как  есть"
-
+    print('Частотный анализ слов текста')
+    for k, v in list:
