@@ -1,38 +1,36 @@
-# Вложенные списки
+# Словари
 
-#a = [1, 38.6, True, False, 'sfs', (1,2)]
+#Пустой словарь
+# 1. d = {}
+# 2. d = dict()
+# Предзаполненный словарь
+d = {
+    'table':['таблица', 'стол'],
+    'well': ['хорошо','колодец','скважина'],
+    'chair': 'стул',
+    'apple': 'яблоко',
+    1: 'один',
+}
 
-#N = 3
-#matrix = [
- #   [1,2,3],
- #   [4,5,6],
-#    [7,8,9],
-#]
 
-matrix = [[i + j for j in range(N)] for i in range(1,10,3)]
-print(matrix)
+print(d['well'][0])
+if type (d['well']) == list:
+    d['well'].append('скважина')
+d['plum'] = 'слива'
+print(d['plum'])
+del d['well']
+
+deleted_item = d.pop('apple')
+
+print('Удалился элемент:', deleted_item)
+
+print('Есть ли стул в словаре')
+if 'chair' in d:
+    print('Да, есть')
 
 
+for key in d:
+    print(key, '->', d[key])
 
-#matrix = [[1]* N for _ in range(3)]
-#print(matrix)
+#print(d) - словарь целиком "как  есть"
 
-#Обход двухмерного списка (матрицы)
-#count = 1
-#for row in range(len(matrix)):
- #   for col in range(len(matrix[row])):
- #       matrix[row][col] = count
-  #      count += 1
- #   print(matrix)
-#print(matrix)
-
-N = 4
-
-for i in range(N):
-    for j in range(start, start + N):
-        table.append(j)
-    matrix.append(table)
-    table = []
-    tart += N
-
-print(matrix)
