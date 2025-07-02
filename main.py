@@ -1,51 +1,46 @@
-# Оператор is: a is b -> a и b - один и тот же объект
-
-my_refregirator = ['колбаса', 'сыр', 'масло']
-his_refregirator = ['колбаса', 'сыр', 'масло']
-his_refregirator = my_refregirator.copy() #[:]
-my_refregirator += ['мясо']
-print(his_refregirator)
-print(my_refregirator is his_refregirator)
-print(my_refregirator == his_refregirator)
-print(id(my_refregirator) == id(his_refregirator))
-temp = None
-print(type(temp))
-print(temp is None)
-
-
-
-#a = {'a' : 1}
-#print(id(d))
-#d['a'] += 1
-#print(id(d))
-
-#def print_goodbye(arg):
-   # print ('Goodbye', end ='')
-
-#def print_cruel(arg):
-  #  print('cruel', end='')
-
-#def print_world(arg):
-   # print('world', end='')
+# Функция, с переиенным числом аргументов
+def multy(*args):
+    # print(len(args)) # подсчёт числа аргументов
+    # print(args) # по индексу, либо перебором в цикле
+    # if len(args) == 0
+        # return 0
+    # result = 1
+    if not args:
+        return 0
+    result = 1
+    for arg in args:
+        result *= arg
+    return result
 
 
-#def main():
-   # print_goodbye(1)
-   # print_cruel(2)
-  #  print_world(3)
+print(multy(1, 2, 3, 4))
 
-#main()
+# Применяем is на практике
+# def print_array(array: list, start: int = None):
+#     if start is not None and start > len(array):
+#         return
+#     if start is None:
+#         start = 0
+#         for i in range(start, len(array)):
+            # print(array[i])
+
+# Возврат нескольких значений из функции
+# При распаковке '*" может быть только одна
+def coordinates() -> tuple:
+    return 5.4, 3.2, 3.8, 7.2, 4.6
+
+
+x, y, *rest = coordinates() # распаковка
+print(f'x = {x}, y = {y}, rest = {rest}')
+
+*names, surname = 'Остап Сулейман Бендер'.split()
+print(names, surname)
+
+print(coordinates())
 
 
 
 
-#def generate_list():
-   # for i in range(5):
-       # yield i # генератор (возвращает, но не завершает)
 
-
-#array = tuple(generate_list())
-
-#print(array)
 
 
