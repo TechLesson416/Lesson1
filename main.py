@@ -8,7 +8,7 @@ print(his_refregirator)
 print(my_refregirator is his_refregirator)
 print(my_refregirator == his_refregirator)
 print(id(my_refregirator) == id(his_refregirator))
-temp = 1
+temp = None
 print(type(temp))
 print(temp is None)
 
