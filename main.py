@@ -1,73 +1,46 @@
-# Функция, как объект
-# Передаётся вдругие функции: функции высшего порядка
-
-# Функция критерия отбора элементов списка
-# Критерий: длина слова
-def is_longer_six(word):
-    return len(word) > 6
-
-
-
-# Критерий - первая буква
-def if_first_lette_a(word):
-    return word[0] == 'a'
-
-def square(num):
-    return num ** 2
-
-nums = [1,2,3,4,5,6,7,8,9] #123456789
-squares = map(square, nums)
-print(list(squares))
-
-
-
-words = ['В','этом', 'списке', 'останутся', 'слова',
-         'длина', 'которых', 'больше', 'шести']
-
-fruits = list(filter(is_longer_six, words))
-print(result)
-
-
-result = list(filter(is_longer_six, fruits))
-print(result)
-
-for word in filter(is_longer_six, words):
-    print(word)
+# Анонимные функции (Анонимыне однострочники, безымянные)
+# lambda-функции
+# Lambda <аргументы>: <выражение>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+# is_longer_six = lambda word: len(word ) > 6
+# # Критерий - первая буква
+# def is_first_letter_a(word):
+#     return word[0] == 'a'
 #
-# def print_any(*args, **kwargs):
-#     for i in args:
-#         print(i)
-#     for k, v in kwargs.items():
-#         print(k, '=', v)
+# is_first_letter_a = lambda word: word[0] == 'a'
 #
-# def profile(name, surname, city, *children, **additional):
-#      print(f'Имя:', {name})
-#      print(f'Фамилия: {surname}')
-#      print(f'Из города: {city}')
-#      if len(children) > 0:
-#          print('Дети:',','.join(children))
-#      if 'hobbie' in additional:
-#          print('Хобби:',','.join(additional['hobbie']))
-#     #print(additional)
+# # Критерний - вхождение подстроки
+# # в частности 'ан'
+# def string_contains(s):
+#         return 'ан' in s
 #
-#     profile('Дмитрий', 'Колесов', 'Волгоград',
-#     'Мария','Пётр',hobbie=['Филателия', 'Шахматы'])
+# string_contains = lambda s: 'ан' in s
 #
+# words = []
 #
+# fruits = ['арбуз','ананас','банан','ежевика','малина']
+#
+# result = list(filter(lambda word: len(word)) > 6, words)
+# print(result)
+#
+# res + list(filter(lambda x: x[0] == 'a', fruits))
+# print(res)
 
+#res + list(filter(lambda s: 'ан' in s, fruits))
+#print(res)
+
+# в одну строоку вывести список квадратов чисели от 3 до 15
+# [9, 16, 25...]
+
+#res = list(map(lambda y: y** 2, range (3, 16)))
+res = [y ** 2 for y in range(3, 16)]
+print(res)
+
+long_words = [word for word in words if len(word) > 6]
+print(long_words)
+
+res + list(filter(lambda > 6, ))
 
