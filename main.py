@@ -1,46 +1,49 @@
-# Анонимные функции (Анонимыне однострочники, безымянные)
-# lambda-функции
-# Lambda <аргументы>: <выражение>
+#ENGLISH_ABC = [chr(ch) for ch in range(ord('a'),ord('z')+1)]
+#print(ENGLISH_ABC)
+#RUSSIAN_ABC - [chr(ch) for ch in range(ord('а'), ord('я')+1)] + ['ё']
+#print(RUSSIAN_ABC)
+# словарные выражения
+# lambda <аргументы>: <выражение>
+
+numbers = [1, 2, 3, 4, 5] # list(range 1, 6)
+squares = {n: n ** 2 for n in numbers}
+print(squares)
+
+numbers = range (1, 11)
+squares = {n: n ** 2 for n in range(1, 10) if n % 2 == 0}
+print (squares)
+
+source_dict = {
+    'x': 1,
+    'y': 2,
+    'z': 3,
+}
+
+dest_dict = {k: v * 2 for k, v in source_dict.items()}
+print(dest_dict)
 
 
 
-
-# is_longer_six = lambda word: len(word ) > 6
-# # Критерий - первая буква
-# def is_first_letter_a(word):
-#     return word[0] == 'a'
+# ENGLISH_ABC = [chr(ch) for ch in range(ord('a'),ord('z')+1)]
+# RUSSIAN_ABC = [chr(ch) for ch in range(ord('а'),ord('я')+1)] + ['ё']
+# ABC = set(ENGLISH_ABC) ^ set(RUSSIAN_ABC) ^ set([x.upper() for x in ENGLISH_ABC])
+# print(ABC)
+# # print(ENGLISH_ABC)
+# # print(RUSSIAN_ABC)
+# txt = 'Однажды, теперь и потом'.lower()
 #
-# is_first_letter_a = lambda word: word[0] == 'a'
 #
-# # Критерний - вхождение подстроки
-# # в частности 'ан'
-# def string_contains(s):
-#         return 'ан' in s
+# def remove_punctuation(txt):
 #
-# string_contains = lambda s: 'ан' in s
+#     return ''.join(filter(lambda x: x in ABC ^ {' '}, txt))
 #
-# words = []
 #
-# fruits = ['арбуз','ананас','банан','ежевика','малина']
+# print(remove_punctuation(txt)(txt))
 #
-# result = list(filter(lambda word: len(word)) > 6, words)
-# print(result)
+# def get_words(txt: str) -> filter:
+#     return remove_punctuation(txt).split()
 #
-# res + list(filter(lambda x: x[0] == 'a', fruits))
-# print(res)
-
-#res + list(filter(lambda s: 'ан' in s, fruits))
-#print(res)
-
-# в одну строоку вывести список квадратов чисели от 3 до 15
-# [9, 16, 25...]
-
-#res = list(map(lambda y: y** 2, range (3, 16)))
-res = [y ** 2 for y in range(3, 16)]
-print(res)
-
-long_words = [word for word in words if len(word) > 6]
-print(long_words)
-
-res + list(filter(lambda > 6, ))
-
+# def long_words(txt, length=4) -> filter:
+#     return filter(lambda word: len(word) >= length, get_words(txt))
+#
+# print(long_words(txt))
