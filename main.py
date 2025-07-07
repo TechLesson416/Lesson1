@@ -1,3 +1,43 @@
+    # Файлы - набор данных, сохранённых на носителях информации определённой структуры
+    # name.txt
+    # t - текстовый файл (txt, html, xml)
+    # b - бинарные файлы (jpg, avi, mp3)
+    # w - write (запись, создаётся\удаляется)
+    # a - append (запись в конец)
+    # r - read - чтение
+
+    fo = open('info.txt', 'wt', encoding='utf-8')
+    print(fo.mode)
+    print(fo.name)
+    print(fo.encoding)
+
+    count = fo.write('Этот текст будет в файле!')
+    print('В файл записано', count, 'байт!')
+
+fo.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Пишем свои модули
 # from lib import diff
 #
