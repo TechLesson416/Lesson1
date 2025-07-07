@@ -4,34 +4,49 @@
     # b - бинарные файлы (jpg, avi, mp3)
     # w - write (запись, создаётся\удаляется)
     # a - append (запись в конец)
-    # r - read - чтение
+    # r - read - чтение (по умолчанию)
+    # print(*args, sep='', end='\n', file=None, flush=False)
 
-    fo = open('info.txt', 'wt', encoding='utf-8')
-    print(fo.mode)
-    print(fo.name)
-    print(fo.encoding)
+#     fo = open('info.txt', 'wt', encoding='utf-8')
+#     print(fo.mode)
+#     print(fo.name)
+#     print(fo.encoding)
+#
+#     count = fo.write('Этот текст будет в файле!')
+#     print('В файл записано', count, 'байт!')
+#
+# fo.close()
 
-    count = fo.write('Этот текст будет в файле!')
-    print('В файл записано', count, 'байт!')
+fo = open('info.txt', 'rt', encoding='utf-8')
+
+#fo.write ('Хороший текст.')
+
+
+text = fo.read(11)
+fo.read(6)
+text += fo.read(7)
+print('\n А Вот, что было в файле', file=fo)
+
+text = fo.readline()
+print(text)
+text = fo.readline()
+print(text)
+
+# Построчное чтение
+while text := fo.readline():
+    print(text.rstrip('\n'))
+
+# Построчное чтение №2
+lst = fo.readlines()
+lst = list(map(lambda x: x.strip('\n'), lst))
+print(lst)
 
 fo.close()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Построчное чтение № 3
+text = fo.read()
+lst = text.splitlines()
+print(lst)
 
 
 
@@ -54,12 +69,12 @@ fo.close()
 
 # from package1 import * # для __
 # import package1
-from package1 import *
-
-
-print(greet('Мир!'))
-print(add(3,7))
-print ('Автор',)
+# from package1 import *
+#
+#
+# print(greet('Мир!'))
+# print(add(3,7))
+# print ('Автор',)
 
 #print(package1.module._hidden_function())
 
