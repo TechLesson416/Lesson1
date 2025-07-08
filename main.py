@@ -1,94 +1,11 @@
-# Файлы и ОС-модуль
-# res = []
-#
-# with open('info.txt', 'rt') as f:
-#     while temp := f.readline():
-#         res += temp.split(', ')
-#
-# # res = list(map(lambda x: x.rstrip('\n'), res))
-# # res = set(res)
-#
-#
-# res = sorted(int (x) for x in res)
-#
-# print(res)
-
-import pickle
 
 
+print(img_dir)
 
-#
-# d = {
-#     'стол': 'table',
-#     'стул': 'chair'
-# }
-#
-# # сериализация
-# with open('dictfile.dat', 'wb') as p:
-#     # d - что сереализует
-#     # p - куда сереализует
-#     pickle.dump(d, p)
-
-
-#  десереализация
-with open('dictfile.dat', 'rb') as p:
-    d = pickle.load(p)
-
-pprint.pprint(d, width=15)
+img_dir = path.join(path.dirname(__file__), 'images')
+font_dir = path.join(path.dirname(__file__), 'fonts')
 
 
 
 
-# import  os
-#
-# path = os.getcwd() # get current working directory
-# os.chdir(patr +'/images')
-#
-#
-# all_files = [f for f in os.listdir('.') if f.endswith('.jpg')]
-# os.chdir('..')
-# print(all_files)
-# os.cndir('..') # на уровень выше
-# os.chdir(path + '/fonts')
-# print(os.getcwd())
-#
-# "Мягкое" создание директорий (вместо mkdirs)
-# os.makedirs('libs', exist_ok=True)
-#
-# if os.path.exists('libs'): # проверка существования пути
-#     os.rmdir('libs')
-# Открытие с менеджером контекста
-# with open('info.txt', 'rt+', encoding='utf-8') as fo:
-#     text = fo.read()
-#     lst = text.splitlines()
-#     print(lst)
-# Проследит, чтобы файл закрылся
 
-# fo.write ('Хороший текст.')
-
-
-# text = fo.read(11)
-# fo.read(6)
-# text += fo.read(7)
-# print('\n А Вот, что было в файле', file=fo)
-#
-# text = fo.readline()
-# print(text)
-# text = fo.readline()
-# print(text)
-#
-# Построчное чтение
-# while text := fo.readline():
-#     print(text.rstrip('\n'))
-#
-# Построчное чтение №2
-# lst = fo.readlines()
-# lst = list(map(lambda x: x.strip('\n'), lst))
-# print(lst)
-#
-# fo.close()
-#
-# Построчное чтение № 3
-# text = fo.read()
-# lst = text.splitlines()
-# print(lst)
