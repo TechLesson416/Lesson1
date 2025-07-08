@@ -1,32 +1,62 @@
 # Файлы и ОС-модуль
+# res = []
+#
+# with open('info.txt', 'rt') as f:
+#     while temp := f.readline():
+#         res += temp.split(', ')
+#
+# # res = list(map(lambda x: x.rstrip('\n'), res))
+# # res = set(res)
+#
+#
+# res = sorted(int (x) for x in res)
+#
+# print(res)
 
-import  os
-
-path = os.getcwd() # get current working directory
-os.chdir(patr +'/images')
+import pickle
 
 
-all_files = [f for f in os.listdir('.') if f.endswith('.jpg')]
-os.chdir('..')
-print(all_files)
 
-#os.cndir('..') # на уровень выше
+#
+# d = {
+#     'стол': 'table',
+#     'стул': 'chair'
+# }
+#
+# # сериализация
+# with open('dictfile.dat', 'wb') as p:
+#     # d - что сереализует
+#     # p - куда сереализует
+#     pickle.dump(d, p)
+
+
+#  десереализация
+with open('dictfile.dat', 'rb') as p:
+    d = pickle.load(p)
+
+pprint.pprint(d, width=15)
+
+
+
+
+# import  os
+#
+# path = os.getcwd() # get current working directory
+# os.chdir(patr +'/images')
+#
+#
+# all_files = [f for f in os.listdir('.') if f.endswith('.jpg')]
+# os.chdir('..')
+# print(all_files)
+# os.cndir('..') # на уровень выше
 # os.chdir(path + '/fonts')
 # print(os.getcwd())
 #
-#
-#
-#
-#
-# # "Мягкое" создание директорий (вместо mkdirs)
-# #os.makedirs('libs', exist_ok=True)
+# "Мягкое" создание директорий (вместо mkdirs)
+# os.makedirs('libs', exist_ok=True)
 #
 # if os.path.exists('libs'): # проверка существования пути
 #     os.rmdir('libs')
-
-
-
-
 # Открытие с менеджером контекста
 # with open('info.txt', 'rt+', encoding='utf-8') as fo:
 #     text = fo.read()
@@ -34,7 +64,7 @@ print(all_files)
 #     print(lst)
 # Проследит, чтобы файл закрылся
 
-#fo.write ('Хороший текст.')
+# fo.write ('Хороший текст.')
 
 
 # text = fo.read(11)
@@ -47,25 +77,18 @@ print(all_files)
 # text = fo.readline()
 # print(text)
 #
-# # Построчное чтение
+# Построчное чтение
 # while text := fo.readline():
 #     print(text.rstrip('\n'))
 #
-# # Построчное чтение №2
+# Построчное чтение №2
 # lst = fo.readlines()
 # lst = list(map(lambda x: x.strip('\n'), lst))
 # print(lst)
 #
 # fo.close()
 #
-# # Построчное чтение № 3
+# Построчное чтение № 3
 # text = fo.read()
 # lst = text.splitlines()
 # print(lst)
-
-
-
-
-
-
-
