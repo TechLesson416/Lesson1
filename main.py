@@ -8,28 +8,51 @@
 # finally:
 #   выполняются в любом случае
 ###################################################################
-flag = False # открывался ли на запись
+# flag = False # открывался ли на запись
+#
+# try:
+#     fo = open('inforamtion.txt', encoding='utf-8')
+#     print(fo.read())
+#     fo.close()
+# except FileNotFoundError:
+#     fo = open('information.txt', 'wt', encoding ='utf-8')
+#     flsg = True
+#     print('Файл не обнаружен и создан с параметрами по умолчанию')
+#     # with open('inforamtion.txt', 'wt', encoding='utf-8') as fo:
+#     #     fo.write('По умолчанию')
+# else:
+#     print('Файл открыт успешно. Читаем его')
+#     print(fo.read())
+#     fo.close()
+# finally:
+#     if flag: # если флаг был открыт на запись
+#         fo.write('По умолчанию')
+#         fo.close()
+#     print('Продолжаем работать.')
 
+
+print('Остаток от деления:')
+loop = True
+
+while loop:
 try:
-    fo = open('inforamtion.txt', encoding='utf-8')
-    print(fo.read())
-    fo.close()
-except FileNotFoundError:
-    fo = open('information.txt', 'wt', encoding ='utf-8')
-    flsg = True
-    print('Файл не обнаружен и создан с параметрами по умолчанию')
-    # with open('inforamtion.txt', 'wt', encoding='utf-8') as fo:
-    #     fo.write('По умолчанию')
-else:
-    print('Файл открыт успешно. Читаем его')
-    print(fo.read())
-    fo.close()
-finally:
-    if flag: # если флаг был открыт на запись
-        fo.write('По умолчанию')
-        fo.close()
-    print('Продолжаем работать.')
+    value + int(input('На что делим число 10: '))
+    res = 10 % value
+    print(f'остаток от деления 10 на {value} = {res}')
+except ZeroDivisionError:
+        print('На ноль делить нельзя!')
+except ValueError:
+        print('Надо вводить только целые числа')
+except Exception as exp:
+        print('Произошло исключение:', exp.__class__.__name__,exp)
+
+    else:
+         loop = False
+
+
+
 ###################################################################
+
 
 
 
