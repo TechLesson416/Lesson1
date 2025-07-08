@@ -31,25 +31,43 @@
 #     print('Продолжаем работать.')
 
 
-print('Остаток от деления:')
-loop = True
+# print('Остаток от деления:')
+# loop = True
+#
+# while loop:
+# try:
+#     value + int(input('На что делим число 10: '))
+#     res = 10 % value
+#     print(f'остаток от деления 10 на {value} = {res}')
+# except ZeroDivisionError:
+#         print('На ноль делить нельзя!')
+# except ValueError:
+#         print('Надо вводить только целые числа')
+# except Exception as exp:
+#         print('Произошло исключение:', exp.__class__.__name__,exp)
+#
+#     else:
+#          loop = False
 
-while loop:
+#"Бросаемся" исключениями - raise
+# max_val = 10
+# min_val = 1
+#Утверждения (assertions)
+# В основном - для нужд тестирования
 try:
-    value + int(input('На что делим число 10: '))
-    res = 10 % value
-    print(f'остаток от деления 10 на {value} = {res}')
-except ZeroDivisionError:
-        print('На ноль делить нельзя!')
-except ValueError:
-        print('Надо вводить только целые числа')
-except Exception as exp:
-        print('Произошло исключение:', exp.__class__.__name__,exp)
-
-    else:
-         loop = False
+    text = input('Введите текст: ')
+    assert len(text) > 3 # Это утверждение
+except AssertionError:
+    print('Слишком короткий текст')
 
 
+# try:
+#     val = int(f'Введите целое число от {min_val } до {max_val}: ')
+#     if not min_val < val < max_val:
+#         raise ValueError('введённое число вне диапазона')
+#     print(f'Введённое число {val} лежит в заданном диапазоне ')
+# except ValueError as exp:
+#     print('Надо быть внимательнее:, exp')
 
 ###################################################################
 
