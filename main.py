@@ -1,80 +1,17 @@
-# Исключения (runtime)
-# try:
-#   что пытаемся сделать
-# except:
-#   обрабатываем исключения
-# else:
-#   если исключения не было
-# finally:
-#   выполняются в любом случае
-###################################################################
-# flag = False # открывался ли на запись
-#
-# try:
-#     fo = open('inforamtion.txt', encoding='utf-8')
-#     print(fo.read())
-#     fo.close()
-# except FileNotFoundError:
-#     fo = open('information.txt', 'wt', encoding ='utf-8')
-#     flsg = True
-#     print('Файл не обнаружен и создан с параметрами по умолчанию')
-#     # with open('inforamtion.txt', 'wt', encoding='utf-8') as fo:
-#     #     fo.write('По умолчанию')
-# else:
-#     print('Файл открыт успешно. Читаем его')
-#     print(fo.read())
-#     fo.close()
-# finally:
-#     if flag: # если флаг был открыт на запись
-#         fo.write('По умолчанию')
-#         fo.close()
-#     print('Продолжаем работать.')
-
-
-# print('Остаток от деления:')
-# loop = True
-#
-# while loop:
-# try:
-#     value + int(input('На что делим число 10: '))
-#     res = 10 % value
-#     print(f'остаток от деления 10 на {value} = {res}')
-# except ZeroDivisionError:
-#         print('На ноль делить нельзя!')
-# except ValueError:
-#         print('Надо вводить только целые числа')
-# except Exception as exp:
-#         print('Произошло исключение:', exp.__class__.__name__,exp)
-#
-#     else:
-#          loop = False
-
-#"Бросаемся" исключениями - raise
-# max_val = 10
-# min_val = 1
-#Утверждения (assertions)
-# В основном - для нужд тестирования
+# выполняется в любом случае
+# Задача 1
+lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 try:
-    text = input('Введите текст: ')
-    assert len(text) > 3 # Это утверждение
-except AssertionError:
-    print('Слишком короткий текст')
-
-
-# try:
-#     val = int(f'Введите целое число от {min_val } до {max_val}: ')
-#     if not min_val < val < max_val:
-#         raise ValueError('введённое число вне диапазона')
-#     print(f'Введённое число {val} лежит в заданном диапазоне ')
-# except ValueError as exp:
-#     print('Надо быть внимательнее:, exp')
-
-###################################################################
-
-
-
-
-
-
-
-
+    index = int(input('Введите текст: '))
+    if not -len(lst) < index < len(lst) - 1:
+        raise Valueerror('Индекс вне диапазона')
+    res = lst[index]
+    print(f'Число по индексу {index}: {res}')
+except AssertionError as exp:
+    if exp.args[0].startswith('invalid literal'):
+        print(f'Вводить надо числа, а не {exp.args[1]}')
+print(exp)
+# index = int(input('Введите индекс:'))
+#
+# print(f'Число по индексу {index}: {lst[index]}')
+# if mess.startswith('Invalid literal'):
