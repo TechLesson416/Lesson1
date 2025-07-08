@@ -1,17 +1,29 @@
-# выполняется в любом случае
-# Задача 1
-lst = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-try:
-    index = int(input('Введите текст: '))
-    if not -len(lst) < index < len(lst) - 1:
-        raise Valueerror('Индекс вне диапазона')
-    res = lst[index]
-    print(f'Число по индексу {index}: {res}')
-except AssertionError as exp:
-    if exp.args[0].startswith('invalid literal'):
-        print(f'Вводить надо числа, а не {exp.args[1]}')
-print(exp)
-# index = int(input('Введите индекс:'))
-#
-# print(f'Число по индексу {index}: {lst[index]}')
-# if mess.startswith('Invalid literal'):
+# Задача 2
+while True:
+    a = input('Введите первое число: ')
+    b = input('Введите второе число:')
+    try:
+        result = int(a) / int(b)
+    except ZeroDivisionError:
+        print('На ноль делить нельзя')
+    except VGalueError:
+        print('Нужно вводить числа...')
+        print(f'А введено: {a} и {b}:')
+        pass
+    else:
+        print(result)
+        break
+
+
+
+    # a = input('введите первое число: ')
+    # b = input('Введите второе число: ')
+    #
+    # if a.isdigit() and b.isdigit():
+    #     if int(b) == 0:
+    #         print('На ноль делить нельзя')
+    #     else:
+    #         print(int(a) / int(b))
+    #         break
+    # else:
+    #     print('Вводить надо только числа.')
