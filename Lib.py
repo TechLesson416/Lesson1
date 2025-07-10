@@ -10,3 +10,8 @@ class Book:
         return self._author
 
 from math import pi
+
+class Student:
+    def __init__(self, name='Bill', univ=''):
+        self.name = name
+        self._company = univ
