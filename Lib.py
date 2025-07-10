@@ -1,11 +1,12 @@
-def summ(a, b)
-    return a + b
+class Book:
+    def __init__(self, title, author):
+        self._title = title
+        self._author = author
 
-def sum(a, b)
-    return a - b
+    def get_title(self):
+        return self._title
 
+    def get_author(self):
+        return self._author
 
-
-if__name__ != '__main__'
-    print('Это библиотека, а исполняемый - main.py')
-#print(__name__)
+from math import pi

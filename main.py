@@ -1,81 +1,118 @@
-# Регулярные выражения (поиск по паттерну)
-# Regular Expressions (re)
-# r-строка - raw-string ("сырая" строка)
-# Квантитификаторы (quantity)
-# {m} - ровно m раз
-# {m,} - m раз и более
-# {,n} - не более n раз
-# {m, n} - от m до n (без пробела)
-# ? - от нуля до одного (аналог {0,1})
-# * - от нуля до бесконечности (32767) {0,}
-# + - от одного до бесконечности {1,}
-import re
+# ООП (polymorhism)
+# method override; operator overloading
+# From lib import Book
 
-# pattern = r'\b\w{4}\b' # все слова из 4 символов
-# pattern = r'\d' # все цифры от 0 до 9
-# pattern = r'начало!\Z' # На что заканчивается
-# pattern = r'[0-5][0-9]' # Две идущие подряд
-# pattern = r'[а-яА-я]' # все буквы от а до я и от А до Я
-# pattern = '[^ерм]' # исключить символы
-# pattern = r'o{2,5}' # вытащить текст из скобок
-pattern = 'Go{2,5}gle' # Google
-test_string = 'Google' , 'Gooogle', 'Gooooooogle'
-
-result = re.findall(pattern, test_string)
-print(result)
-# Thernary If (тернарный условный оператор)
-print('Цифры есть') if result else print('Цифр нет')
+# isinstance(объект, тип) -> True
+# isinstance(объект, (тип1, тип 2, тип N)) -> True
 
 
-
-
-
-
-
-
-
-
-
-# Линтерны - контролирует следование хорошим практикам
-# Flake 8
-# pip install flake8
-# (flake8-bugbear - для нахождения  логических ошибок в коде)
-# (pep8-naming - проверяет имена на соответствие pep8)
-# pip install flake8-bugbear pep8-naming
-# Arguments --max-complexity 10 $FileDir$/$FileName$
-# Path: $FileDir$
-# Advanced Options/OutputFilter: #FILE_PATH$:$LINES$
-
-
-
-
-
-
-# Библиотека pymorphy
-# pip install pymorphy3
-# pip install -U pymorphy3-dicts-ru
-# from pymorphy3 import MorphAnalyzer
-#
-# form = MorphAnalyzer().parse('бутылка')[0]
-#
-# for btl in reversed(range(99)):
-#     print(f'В холодильнике {btl + 1} {form.make_agree_with_number(btl + 1).word} пива')
-#     print('Возьмёмодну и выпьем')
-#     if btl % 10 == 1 and btl != 11:
-#         remain = 'Осталась'
-#     else:
-#         remain = 'Осталась'
-#     print(f'{remain} {btl} {form.make_agree_with_number(btl).word} пива.')
+# from lib import Circle, Rectangle, Square
 #
 #
+# # class Circle:
+# #     def __init__(self, radius):
+# #         self.radius = radius
+# #
+# #     def perimeter(self):
+# #         return (2 * pi * self.radius, 2)
+# #
+# #     def area(self):
+# #         return (pi * self.radius ** 2, 2)
+# #
+# #     def get_name(self):
+# #         return self.side
+# #
+# #
+# # class Square:
+# #     def __init__(self, side):
+# #         self.side = side
+# #
+# #     def perimeter(self):
+# #         return 4 * self.side
+# #
+# #     def area(self):
+# #         return self.name
+# #
+# # def shape_info(shape: object):
+# #     print(f'Площадь {shape.get_name()}a: {shape.area()}, Периметр: {shape.perimeter()}')
 #
-# import pymorphy3
 #
-# morph = pymorphy3.MorphAnalyzer()
+# rect, c, sqr = ['прямоугольник', 'круг', 'квадрат']
+# fig = ''
 #
-# print(morph.parse('пила'))
-#
-#
+# def shape_info(shape: object):
+#     if isinstance(shape, Circle):
+#         fig = c
+#     if isinstance(shape, Circle):
+#         fig = rect
+#     if isinstance(shape, Circle):
+#         fig = sqr
+#     print(f'Площадь {fig}a: {shape.area()}, Периметр: {shape.perimeter()}')
 #
 
 
+
+
+# s = Square(10)
+# shape_info(s)
+#
+# cr = Circle(10)
+# shape_info(cr)
+#
+# r = Rectangle(5, 2)
+# shape_info(r)
+#
+# class Rectangle:
+#     def __init__(self, width, height):
+#         self.width =  width
+#         self.height = height
+#         self.name = 'квадрат'
+#
+#     def perimeter(self):
+#         return self.width * self.height
+#
+#
+#     # def area(self):
+#     #     return self.width ** 2
+# #
+# def shape_info(shape: object):
+#     print(f'Площадь {shape.area()}a: Периметр: {shape.perimeter()}')
+#
+
+
+
+
+
+
+
+
+
+print(dir(s))
+print(dir(cr))
+
+
+
+
+
+
+
+
+
+# book = Book('Язык C++', 'Бьярн Страупструп')
+#
+# print(f'{book.get_title(), book.get_author()}')
+
+
+# Полиформизм - это свойство кода работать с разными типами данных
+
+
+
+# print(1 + 2)
+# print(1 + 2.0)
+# print('abc' + 'def')
+# print([1, 2] + [3, 4])
+#
+# def func(x, y):
+#     return x + y
+#
+# print(func(2,3.0))
