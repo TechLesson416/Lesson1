@@ -1,5 +1,38 @@
+# Zip
+from zipfile import ZipFile
+import os
+
+# csv_files = [f for f in os.listdir() if f.endswith('.csv')]
+# #print(csv_files)
+# with ZipFile('archive.zip', 'w') as myzip:
+#     for file in vsc_files:
+#         myzip.write(file)
+#         os.remove(file)
+
+
+
+files_to_extract = ['people.csv', 'file.csv']
+
+# Распаковать
+
+
+# with ZipFile('archive.zip', 'r') as zip_obj:
+#     zip_obj.extractall(members = files_to_extract)
+
+
+# Получить список
+with ZipFile('archive.zip', 'r') as zip_obj:
+    print(zip_obj.nameList())
+
+
+
+
 # CSV-файлы
-import csv
+# import csv
+
+
+
+
 
 # with open('people.csv','r', encoding='utf-8') as f:
 #     dict_reader = csv.DictReader(f)
