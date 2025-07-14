@@ -1,2 +1,39 @@
 Color. RGBA
 }
+
+
+.green {
+color: green;
+}
+
+#yellow {
+color: yellow;
+}
+
+ul>li {
+color: gray;
+}
+
+
+#alive {
+font-family: 'Arial';
+font-size: 26pt;
+text-align: center;
+}
+
+.go-to--show {
+    display: block;
+}
+
+.go-too {
+    position: fixed;
+    right: 20px;
+    bottom: 50px;
+    cursor: pointer;
+    /*display: none;*/
+    font-size: 18pt;
+    color: rgba(0, 51, 153, 0.5);
+    background-color: rgba(0, 51, 153, 0.1)
+    padding: 8px 15px 12px 15px;
+    border-radius: 50%
+}
