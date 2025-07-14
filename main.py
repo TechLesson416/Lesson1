@@ -1,6 +1,26 @@
+# JSON - (Java Script Object Notation)
+# Для чтения:
+# load() - читает из файла
+# loads() - читает строковое представление
+import json
+
+with open('dogs.json', 'rt') as d:
+    # data = json.load(d) # Напрямую из файла
+    temp = d.read()  #Читаем файл как строку
+    data = json.loads(temp) # строковое представление JSON
+
+for k, v in data.items():
+    if type(v) == list:
+        print(f'{k}: {', '.join(v)})
+    else:
+        print(f'{k}: {v}')
+
+
+
+
 # Zip
-from zipfile import ZipFile
-import os
+# from zipfile import ZipFile
+# import os
 
 # csv_files = [f for f in os.listdir() if f.endswith('.csv')]
 # #print(csv_files)
