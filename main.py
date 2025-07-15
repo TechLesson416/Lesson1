@@ -1,20 +1,43 @@
 # Декораторы
-def upper_case_print(old_func):
-    def new_func(*args, **kwargs):
-        case = kwargs.pop('case', None)
-        if case == 'U':
-            args_up_case = [str(arg).upper() for arg in args]
-        elif case =='L':
-            args_up_case = [str(arg).lower() for arg in args]
-        return old_func(*args_up_case, **kwargs)
-    return new_func
+g = 5
+def outer():
+    x = 5
+
+    def inner():
+        nonlocal x
+        print('Nonlocal x=', x)
+        x = 10
+
+    inner()
+    print('New x=', x)
+
+
+outer()
 
 
 
-new_print = upper_case_print(print)
-new_print('Привет, Пока')
-new_print('Привет, Пока', case='U')
-new_print('Привет, Пока', case='L')
+
+
+
+
+
+
+# def upper_case_print(old_func):
+#     def new_func(*args, **kwargs):
+#         case = kwargs.pop('case', None)
+#         if case == 'U':
+#             args_up_case = [str(arg).upper() for arg in args]
+#         elif case =='L':
+#             args_up_case = [str(arg).lower() for arg in args]
+#         return old_func(*args_up_case, **kwargs)
+#     return new_func
+#
+#
+#
+# new_print = upper_case_print(print)
+# new_print('Привет, Пока')
+# new_print('Привет, Пока', case='U')
+# new_print('Привет, Пока', case='L')
 # def answer(question):
 #     return 'думайте сами'
 #
