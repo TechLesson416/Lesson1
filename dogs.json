@@ -1,8 +1,23 @@
+[
+  },
 {
+  {
   "name": "Rex",
   "photo": "rex.jpg",
   "age": 8,
   "meals": [
     "Purina",
-    "Royal Canin"]
-}
+    "Royal Canin"
+  ]
+},
+{
+  "name": "Bobik",
+  "photo": "Bobik.jpg",
+  "age": 10,
+  "meals": [
+    "Purina",
+    "Royal Canin",
+    "Hills"
+  ]
+ },
+]
