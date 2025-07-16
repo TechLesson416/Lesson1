@@ -1,38 +1,39 @@
- Введение во Flask
- MVC -(Model View Controller)
- from flask import Flask, url_for
+ # Введение во Flask
+ # MVC -(Model View Controller)
 
- app = Flask(__name__)
- debug = False
+from flask import Flask, url_for, request
+
+app = Flask(__name__)
+debug = False
 
 
- @app.route('/')
- @app.route('/index')
- def index():
+@app.route('/')
+@app.route('/index')
+def index():
      print('Вызвана функция index')
      return 'Привет, Flask'
 
 
- @app.route('/about')
- def about():
+@app.route('/about')
+def about():
      print('вызвана функция about')
      return 'О нас'
 
  @app.route('/countdown')
- def cd():
+def cd():
      lst = [str(x) for x in reversed(range(10))]
      lst.append('Полетели!!!')
-     return '<5>'.join(lst)
+     return '<5>.join(lst)'
 
 
  @app.route('/image')
- def show_image():
+def show_image():
      return f'<img src="{url_for('static', filename='images/python.jpg')}">'
 
 
  @app.route('/sample-page')
- def sample_page():
-     return f""" <!DOCTYPE html>
+def sample_page():
+     return f"""<!DOCTYPE html>
          <html lang="ru">
          <head>
              <meta charset="UTF-8">
@@ -42,11 +43,11 @@
              <img src="url_for('static', filename='images/python2.jpg'" alt="Pethon">
          </body>
          </html>
-     """
+"""
 
 
  @app.route('/sample-page2')
- def sample_page2():
+def sample_page2():
      with open('temp.html', 'r') as html:
          return html.read()
 
@@ -56,18 +57,18 @@
      # Адрес локального хоста
 
 
-<string> - #по умолчанию строка
- <int:number> - #целое
- <float:number> - #дес.дробь
-<path:p> - #может содержать слэши для указания пути
- <uuid:id> - #строка-идентификатор (16 - байт в HEX-формате)
- app.route('/greeting/<user>/<int:id_num>')
- def greeting(user):
-     return f'Привет, {user} c id={id_num}
+# <string> - #по умолчанию строка
+#  <int:number> - #целое
+#  <float:number> - #дес.дробь
+# <path:p> - #может содержать слэши для указания пути
+#  <uuid:id> - #строка-идентификатор (16 - байт в HEX-формате)
+ @app.route('/greeting/<user>/<int:id_num>')
+def greeting(user):
+     return f'Привет, {user} c id={id_num}'
 
  @app.route('/get-user')
- @app.route('/get-user/<int:id_num>')
- def get_user(id_num):
+@app.route('/get-user/<int:id_num>')
+def get_user(id_num):
      if id_num is None:
          return 'Нет номера записи'
      con = sqlite3.connect('db/movies.sqlite')
@@ -80,7 +81,7 @@
      con.close()
      return str(result[0])
      def get_user(id_num):
-     return f'''<table border="1">
+        return f'''<table border="1">
     <tr>
     <td>ФИО</td>
     <td>Город</td >
@@ -90,3 +91,13 @@
     <td>{name}</td>
     </tr>
     </table>'''
+
+
+ @app.route('/form-test', methods=['POST', 'GET' ])
+def form_test():
+     if request.method == 'GET':
+         with open('form.html', 'r', encoding='utf=8') as html:
+             return html.read()
+     elif request.method == 'POST':
+         print(request.form['gender'])
+         return 'Форма успешно отправлена'
