@@ -1,6 +1,6 @@
 # Введение во Flask
 # MVC -(Model View Controller)
-from flask import Flask
+from flask import Flask, url_for
 
 app = Flask(__name__)
 debug = False
@@ -25,9 +25,24 @@ def cd():
     return '<5>'.join(lst)
 
 
-app.route('/image')
+@app.route('/image')
 def show_image():
-    return '<img src="python.jpg">'
+    return f'<img src="{url_for('static', filename='images/python.jpg')}">'
+
+
+@app.route('/sample-page')
+def sample_page():
+    return f""" <!DOCTYPE html>
+        <html lang="ru">
+        <head>
+            <meta charset="UTF-8">
+            <title>Title</title>
+        </head>
+        <body>
+            <img src="f{url_for('static', filename='images/python2.jpg')}" alf="Pethon">
+        </body>
+        </html>
+    """
 
 
 
