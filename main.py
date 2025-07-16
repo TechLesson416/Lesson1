@@ -25,6 +25,11 @@ def cd():
     return '<5>'.join(lst)
 
 
+app.route('/image')
+def show_image():
+    return '<img src="python.jpg">'
+
+
 
 if __name__ == '__main__':
     app.run(host='localhost', port=5000, debug=True)
