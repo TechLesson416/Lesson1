@@ -1,10 +1,25 @@
- # Введение во Flask
- # MVC -(Model View Controller)
+# Введение во Flask
+# MVC -(Model View Controller)
+# GET - запрашивает данные (readonly)
+# POST - отправляет данные на сервер (submit)
+# PUT - принудительно заменяет всё на сервере из контекста запроса ("заменить")
+# DELETE - удаляет указанные данные ("удалить")
+# PATCH - частичное изменение данных
 
 from flask import Flask, url_for, request
+from werkzeug.utils import secure_filename
+import sqlite3
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'uploads/'
+ALLOWED_EXTENSIONS = ['txt', 'pdf', 'zip', 'jpg', 'png']
 debug = False
+
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
 @app.route('/')
@@ -101,3 +116,31 @@ def form_test():
      elif request.method == 'POST':
          print(request.form['gender'])
          return 'Форма успешно отправлена'
+
+@app.route('/upload')
+def file_upload():
+    if request.method == 'GET':
+        with open('upload.html', 'r', encoding='utf-8') as html:
+            return html.read()
+    elif request.method == 'POST':
+        if 'file' not in request.files:
+            return 'Файл не был выбран!!!'
+
+        file = request.files['file']
+
+        if file.filename == '':
+            return 'Файл без имени'
+
+        if file and allowed_file(file.filename):
+            new_name = secure_filename(file.filename)
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], new_name))
+            return f'Файл {new_name} успешно загружен!'
+    return "Ошибка загрузки"
+
+
+
+if __name__ == ''
+
+
+
+
