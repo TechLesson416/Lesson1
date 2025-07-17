@@ -1,0 +1,10 @@
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordFiels
+from wtforms import BoolenField, SubmitField
+from wtforms.validators import DataRequired
+
+class LoginForm(FlaskForm):
+    username = StringField('Логин', validators=[DataRequired('Это обязательное поле')])
+    password = PasswordField('Пароль', validators=[DataRequired('Без пароля нельзя!')])
+    remember_me = BooleanField('Запомнить меня')
+    submit = SubmitField('Войти')
