@@ -8,13 +8,14 @@
 # JINJA - переменные, условия, циклы и т.д.
 
 import os.patch
-
+from forms.LoginForm
 from flask import Flask, url_for, request, render_template
 from werkzeug.utils import secure_filename
 import sqlite3
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
+app.config['SECRET_KEY'] ='just_secret_key'
 ALLOWED_EXTENSIONS = ['txt', 'pdf', 'zip', 'jpg', 'png']
 debug = False
 
@@ -46,6 +47,11 @@ def index():
     params['title'] = 'приветствие'
     params['weather'] = 'Сегодня хорошая погода'
     return render_template ('index.html', **params)
+
+
+
+
+
 
 #
 # @app.route('/about')
@@ -100,7 +106,7 @@ def index():
 def greeting(user):
      return f'Привет, {user} c id={id_num}'
 
- @app.route('/get-user')
+@app.route('/get-user')
 @app.route('/get-user/<int:id_num>')
 def get_user(id_num):
      if id_num is None:
