@@ -5,8 +5,11 @@
 # PUT - принудительно заменяет всё на сервере из контекста запроса ("заменить")
 # DELETE - удаляет указанные данные ("удалить")
 # PATCH - частичное изменение данных
+# JINJA - переменные, условия, циклы и т.д.
 
-from flask import Flask, url_for, request
+import os.patch
+
+from flask import Flask, url_for, request, render_template
 from werkzeug.utils import secure_filename
 import sqlite3
 
@@ -22,54 +25,70 @@ def allowed_file(filename):
         filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-@app.route('/')
-@app.route('/index')
-def index():
-     print('Вызвана функция index')
-     return 'Привет, Flask'
+app.route('/')
+
+
+
 
 
 @app.route('/about')
 def about():
-     print('вызвана функция about')
-     return 'О нас'
-
- @app.route('/countdown')
-def cd():
-     lst = [str(x) for x in reversed(range(10))]
-     lst.append('Полетели!!!')
-     return '<5>.join(lst)'
+    print('Вызвана функция about')
+    return
 
 
- @app.route('/image')
-def show_image():
-     return f'<img src="{url_for('static', filename='images/python.jpg')}">'
 
+@app.route('/')
+@app.route('/index')
+def index():
+    params = {}
+    params['user'] = 'слушатель'
+    params['title'] = 'приветствие'
+    params['weather'] = 'Сегодня хорошая погода'
+    return render_template ('index.html', **params)
 
- @app.route('/sample-page')
-def sample_page():
-     return f"""<!DOCTYPE html>
-         <html lang="ru">
-         <head>
-             <meta charset="UTF-8">
-             <title>Title</title>
-         </head>
-         <body>
-             <img src="url_for('static', filename='images/python2.jpg'" alt="Pethon">
-         </body>
-         </html>
-"""
-
-
- @app.route('/sample-page2')
-def sample_page2():
-     with open('temp.html', 'r') as html:
-         return html.read()
-
-
- if __name__ == '__main__':
-     app.run(host='localhost', port=5000, debug=debug)
-     # Адрес локального хоста
+#
+# @app.route('/about')
+# def about():
+#      print('вызвана функция about')
+#      return 'О нас'
+#
+#  @app.route('/countdown')
+# def cd():
+#      lst = [str(x) for x in reversed(range(10))]
+#      lst.append('Полетели!!!')
+#      return '<5>.join(lst)'
+#
+#
+#  @app.route('/image')
+# def show_image():
+#      return f'<img src="{url_for('static', filename='images/python.jpg')}">'
+#
+#
+#  @app.route('/sample-page')
+# def sample_page():
+#      return f"""<!DOCTYPE html>
+#          <html lang="ru">
+#          <head>
+#              <meta charset="UTF-8">
+#              <title>Title</title>
+#          </head>
+#          <body>
+#              <img src="url_for('static', filename='images/python2.jpg'" alt="Pethon">
+#          </body>
+#          </html>
+# """
+#
+#
+#  @app.route('/sample-page2')
+# def sample_page2():
+#      with open('temp.html', 'r') as html:
+#          return html.read()
+#
+#
+#  if __name__ == '__main__':
+#      app.run(host='localhost', port=5000, debug=debug)
+#      # Адрес локального хоста
 
 
 # <string> - #по умолчанию строка
@@ -139,8 +158,26 @@ def file_upload():
 
 
 
-if __name__ == ''
+@app.route('/numbers')
+def odd_even():
+    return render_template('numbers.html', title='Чёт-нечёт', number=2)
 
 
 
+@app.route('/deals')
+def printlist():
+    deal = ['Помыть посуду', 'Выгулять собаку',
+            'Снять показания счётчика', 'Сходить в магазин']
+    return render_template('printlist.html', deals=deal)
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1', port=5000, debug=debug)
+
+@app.route('/queue')
+    def queue():
+    # loop.index - Номер итерации, начиная с 1
+    # loop.index0 - номер итерации, начиная с 0
+    # loop.first  - True? если первая
+    #
+        return render_tempalte('vars.html', title='Стоим в очереди')
 
